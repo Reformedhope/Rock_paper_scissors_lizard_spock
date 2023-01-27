@@ -142,10 +142,10 @@ class Game:
 
     def display_winner(self):
         if self.player_one.score <= 2:
-            print(" Player one wins! ")
+            print(f'player two wins by {self.player_one.score}')
 
         if self.player_two.score <= 2:
-            print( "player two wins! ")
+            print(f'player two wins by {self.player_two.score}')
 
 
 
