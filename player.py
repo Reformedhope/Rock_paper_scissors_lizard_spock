@@ -1,14 +1,11 @@
-from human import Human
-
 class Player: 
-    def __init__(self):
-        self.name = input("What is the players name? ")
-        print(f'{self.name} has entered the game. please select your method of attack')
-        print (gesture_list)
+    def __init__(self, name):
+        self.score = 0 
+        self.name = name
+        self.list_of_gestures = ["rock", "paper", "scissors", "lizard", "spock"]
+        self.chosen_gesture = " "
 
-
-    def __init__(self) -> None:
-        pass
+    
     
     
     

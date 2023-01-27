@@ -19,8 +19,8 @@
 
 from game import Game
 
-if __name__== 'main':
-    game = Game()
-    game.run_game()
+
+game = Game()
+game.run_game()
     # game.display_winner()
     
