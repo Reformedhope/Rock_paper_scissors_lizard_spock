@@ -22,6 +22,10 @@ class Game:
             user_two_name = input('what is player twos name? ')
             self.player_one = Human(user_one_name)
             self.player_two = Human (user_two_name)
+        
+        
+                
+
        
     
     def run_game(self):
@@ -33,15 +37,15 @@ class Game:
     def play_rounds(self):
 
 
-        while self.player_two.score >= 0 and self.player_one.score >=0:
+        while self.player_two.score < 3 and self.player_one.score < 3:
             self.player_one.choose_gesture()
             self.player_two.choose_gesture()
-
+            
+           
             if self.player_two.chosen_gesture == "rock" and self.player_one.chosen_gesture == "scissors":
                 print("Rock smashed the scissors")
                 self.player_two.score += 1
-                print(f'player two has {self.player_two.score}')
-        
+                
             elif self.player_two.chosen_gesture == "scissors" and self.player_one.chosen_gesture == "rock":
                 print("Rock smashed the scissors")
                 self.player_one.score += 1
@@ -129,6 +133,7 @@ class Game:
 
             elif self.player_two.chosen_gesture == "lizard" and self.player_one.chosen_gesture == "lizard":
                 print("Tie, try again.")
+            
     
             
               
