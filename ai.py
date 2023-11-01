@@ -10,7 +10,9 @@ class AI(Player):
         self.name = name
 
     def choose_gesture(self):
-        self.chosen_gesture = random.choice(self.list_of_gestures) #provides a random selection from the list.
+        gesture = random.choice(self.list_of_gestures) #provides a random selection from the list.
 
         sleep(1) # Delays execution.
-        print(f'{self.name} has picked {self.chosen_gesture}')
+        print(f'{self.name} has picked {gesture}')
+
+        return gesture

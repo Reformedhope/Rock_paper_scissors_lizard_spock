@@ -9,17 +9,17 @@ class Game:
      self.player_two = None
 
     def display_rules(self):
-       print(' The game will be played with best 2 out of 3. choose your options wisely.')
+       print('The game will be played with best 2 out of 3. choose your options wisely.')
     
     def Choose_players(self):
-        user_choice = input('Select how many people are going to play, Option 1 or 2 ')
+        user_choice = input('Select how many people are going to play, Option 1 or 2: ')
         if user_choice =="1":
-            user_one_name = input('what is player ones name? ')
+            user_one_name = input('What is player ones name? ')
             self.player_one = Human(user_one_name)
-            self.player_two = AI ("Ben")
+            self.player_two = AI ("Dylan")
         if user_choice =="2":
-            user_one_name = input ("what is player ones name? ")
-            user_two_name = input('what is player twos name? ')
+            user_one_name = input ("What is player ones name? ")
+            user_two_name = input('What is player twos name? ')
             self.player_one = Human(user_one_name)
             self.player_two = Human (user_two_name)
         
@@ -38,9 +38,15 @@ class Game:
 
 
         while self.player_two.score < 3 and self.player_one.score < 3:
-            self.player_one.choose_gesture()
-            self.player_two.choose_gesture()
-            
+            player_one_gesture = None
+            while player_one_gesture == None:
+                player_one_gesture = self.player_one.choose_gesture()
+            self.player_one.chosen_gesture = player_one_gesture
+
+            player_two_gesture = None
+            while player_two_gesture == None:
+                player_two_gesture = self.player_two.choose_gesture()
+            self.player_two.chosen_gesture = player_two_gesture
            
             if self.player_two.chosen_gesture == "rock" and self.player_one.chosen_gesture == "scissors":
                 print("Rock smashed the scissors")
@@ -133,6 +139,8 @@ class Game:
 
             elif self.player_two.chosen_gesture == "lizard" and self.player_one.chosen_gesture == "lizard":
                 print("Tie, try again.")
+            else:
+                print("try again")
             
     
             
