@@ -16,7 +16,7 @@ class Game:
         if user_choice =="1":
             user_one_name = input('What is player ones name? ')
             self.player_one = Human(user_one_name)
-            self.player_two = AI ("Dylan")
+            self.player_two = AI ("Jorge")
         if user_choice =="2":
             user_one_name = input ("What is player ones name? ")
             user_two_name = input('What is player twos name? ')
@@ -141,7 +141,7 @@ class Game:
                 print("Tie, try again.")
             else:
                 print("try again")
-            
+            #to make this better you can run it through to check each one and condense it down from all the elif statements.
     
             
               
